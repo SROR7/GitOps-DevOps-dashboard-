@@ -25,7 +25,7 @@ module "eks" {
 
   # EKS Managed Node Group(s)
   eks_managed_node_groups = {
-    gitdev_nodes = {
+    dashboard_nodes = {
       name = "dashboard-node"
 
       instance_types = ["t3.medium"]
@@ -44,7 +44,7 @@ module "eks" {
       }
 
       tags = {
-        Project = "gitdev"
+        Project = "dashboard"
       }
     }
   }
