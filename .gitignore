@@ -11,6 +11,5 @@ override.tf.json
 .terraform.lock.hcl
 
 
-terraform.tfvars
 *.tfvars
 *.tfvars.json
