@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: frontend
-  namespace: do-dashboard
+  namespace: dashboard-namespace
 
 spec:
   replicas: 2

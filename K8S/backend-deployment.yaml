@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: backend
-  namespace: do-dashboard
+  namespace: dashboard-namespace
 
 spec:
   replicas: 2
@@ -24,3 +24,15 @@ spec:
 
         ports:
         - containerPort: 3000
+
+        env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: github-api-secret
+              key: GITHUB_TOKEN
+        - name: GITHUB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: github-api-secret
+              key: GITHUB_USERNAME

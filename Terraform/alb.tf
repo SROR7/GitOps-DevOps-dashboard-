@@ -12,7 +12,7 @@ resource "helm_release" "aws_load_balancer_controller" {
     },
     {
       name  = "region"
-      value = "eu-north-1"
+      value = "us-east-1"
     },
     {
       name  = "vpcId"
