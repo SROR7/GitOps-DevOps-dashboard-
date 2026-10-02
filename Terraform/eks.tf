@@ -6,15 +6,28 @@ module "eks" {
   kubernetes_version = "1.33"
 
   addons = {
-    coredns                = {}
-    eks-pod-identity-agent = {
+    coredns = {
+      most_recent = true
+    }
+
+    kube-proxy = {
+      most_recent = true
+    }
+
+    vpc-cni = {
+      most_recent    = true
       before_compute = true
     }
-    kube-proxy             = {}
-    vpc-cni                = {
-      before_compute = true
+
+    eks-pod-identity-agent = {
+      most_recent = true
+    }
+
+    aws-ebs-csi-driver = {
+      most_recent = true
     }
   }
+
 
   endpoint_public_access = true
 
@@ -28,7 +41,7 @@ module "eks" {
     dashboard_nodes = {
       name = "dashboard-node"
 
-      instance_types = ["t3.medium"]
+      instance_types = ["t3.large"]
 
       capacity_type = "ON_DEMAND"
 

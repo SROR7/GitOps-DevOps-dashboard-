@@ -1,0 +1,24 @@
+community:
+  enabled: true
+
+monitoringPasscode: "sonarqube-monitoring-pass"
+
+postgresql:
+  enabled: false
+
+service:
+  type: ClusterIP
+
+persistence:
+  enabled: true
+  storageClass: gp3
+  accessMode: ReadWriteOnce
+  size: 20Gi
+
+resources:
+  requests:
+    cpu: 400m
+    memory: 2Gi
+  limits:
+    cpu: 2
+    memory: 4Gi
