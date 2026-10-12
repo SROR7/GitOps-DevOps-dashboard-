@@ -11,7 +11,7 @@ helm upgrade --install sonarqube sonarqube/sonarqube \
 ## Install the chart
 
 ```sh 
-helm install sonarqube sonarqube/sonarqube -n sonarqube -f values.yaml
+helm install sonarqube sonarqube/sonarqube -n sonarqube-new -f values.yaml
 kubectl -n sonarqube get pods -w
 ```
 

@@ -1,10 +1,7 @@
 community:
   enabled: true
 
-monitoringPasscode: "sonarqube-monitoring-pass"
-
-postgresql:
-  enabled: false
+monitoringPasscode: "CHANGE_THIS_TO_A_LONG_RANDOM_VALUE"
 
 service:
   type: ClusterIP
@@ -15,10 +12,13 @@ persistence:
   accessMode: ReadWriteOnce
   size: 20Gi
 
+postgresql:
+  enabled: false
+
 resources:
   requests:
     cpu: 400m
     memory: 2Gi
   limits:
-    cpu: 2
+    cpu: "2"
     memory: 4Gi
