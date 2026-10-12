@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: dashboard-argocd
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/SROR7/GitOps-DevOps-dashboard-.git
+    targetRevision: main
+    path: K8S
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dashboard-namespace
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
